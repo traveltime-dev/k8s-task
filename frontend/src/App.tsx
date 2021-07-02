@@ -63,7 +63,7 @@ function App() {
       <header className="App-header">
         <p>NOTE: If any of the requests fails, you can find error message in console</p>
         <div className="api-alive-container">
-          <div className="button" onClick={checkIfAPIAlive}>Chekc if API Is Alive</div>
+          <div className="button" onClick={checkIfAPIAlive}>Check if API Is Alive</div>
           <div>Last Response: {apiAliveResponse}</div>
         </div>
         <div className="split" />
