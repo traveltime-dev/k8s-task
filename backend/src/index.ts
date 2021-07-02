@@ -30,7 +30,7 @@ app.post('/api/calculate', (req, res) => {
     const randomDiscount = new Date().getSeconds();
 
     res.send({
-      total: total.cost,
+      total: total.cost.toFixed(2),
       discount: randomDiscount,
       finalCost: (total.cost * (100 - randomDiscount) / 100).toFixed(2),
     })
