@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-frontend
+spec:
+  selector:
+    matchLabels:
+      app: test-frontend
+      tier: frontend
+      track: stable
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: test-frontend
+        tier: frontend
+        track: stable
+    spec:
+      containers:
+        - name: nginx
+          image: danielnaumau/test-frontend:latest
+          env:
+            - name: REACT_APP_API_URL
+              value: simple-node-backend
