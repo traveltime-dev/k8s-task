@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Ingress
+metadata:
+  name: test-ingress
+spec:
+  rules:
+    - host: test.timetravel
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: test-frontend
+                port:
+                  number: 80
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: node-backend
+                port:
+                  number: 8080
