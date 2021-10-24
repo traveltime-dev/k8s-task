@@ -6,19 +6,17 @@ spec:
   selector:
     matchLabels:
       app: test-frontend
-      tier: frontend
-      track: stable
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
         app: test-frontend
-        tier: frontend
-        track: stable
     spec:
       containers:
-        - name: nginx
+        - name: test-frontend
           image: danielnaumau/test-frontend:latest
+          ports:
+            - containerPort: 3000
           env:
             - name: REACT_APP_API_URL
-              value: simple-node-backend
+              value: node-backend

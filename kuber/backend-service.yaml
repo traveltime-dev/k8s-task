@@ -5,8 +5,7 @@ metadata:
 spec:
   selector:
     app: node-backend
-    tier: backend
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: http
+    - name: http
+      port: 8080
+      targetPort: 8080

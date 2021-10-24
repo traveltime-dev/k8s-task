@@ -1,19 +1,12 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: test-ingress
+  name: test-task-ingress
 spec:
   rules:
-    - host: test.timetravel
+    - host: testtraveltime.com
       http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: test-frontend
-                port:
-                  number: 80
           - path: /api
             pathType: Prefix
             backend:
@@ -21,3 +14,10 @@ spec:
                 name: node-backend
                 port:
                   number: 8080
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: test-frontend
+                port:
+                  number: 3000
