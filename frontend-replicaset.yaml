@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend 
+  namespace: k8s-test-task
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend 
+  template:
+    metadata:
+      labels:
+        app: frontend 
+    spec:
+      containers:
+      - name: frontend 
+        image: igeolise/k8s-task-frontend:1.0.0
